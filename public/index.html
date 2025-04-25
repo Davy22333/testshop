@@ -30,20 +30,51 @@
 </head>
 <body class="bg-light">
   <div class="container py-5">
-    <h1 class="text-center mb-4">Product List</h1>
-    <div id="products" class="row g-3"></div>
+    <!-- Header -->
+    <h1 class="text-center mb-4 text-primary">Welcome to Our Online Store</h1>
+    <p class="text-center text-muted">Browse our products and add them to your cart!</p>
 
-    <h2 class="mt-5">Cart</h2>
-    <div id="cart" class="mb-3"></div>
-    <button class="btn btn-primary" onclick="checkout()">Order</button>
+    <!-- Product List -->
+    <h2 class="text-center mt-5">Product List</h2>
+    <table class="table table-striped table-hover mt-3">
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Product Name</th>
+          <th scope="col">Price</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody id="products">
+        <!-- Dynamically populated rows -->
+      </tbody>
+    </table>
 
+    <!-- Cart Section -->
+    <h2 class="text-center mt-5">Your Cart</h2>
+    <div id="cart" class="border p-3 bg-white rounded shadow-sm mb-3">
+      <p class="text-muted text-center">Your cart is empty.</p>
+    </div>
+    <div class="text-center">
+      <button class="btn btn-primary" onclick="checkout()">Order</button>
+    </div>
+
+    <!-- Address Form -->
     <div id="addressForm" class="mt-4" style="display:none;">
       <div class="mb-3">
+        <label for="address" class="form-label">Shipping Address</label>
         <input id="address" class="form-control" placeholder="Enter your address" />
       </div>
-      <button class="btn btn-success" onclick="submitOrder()">Submit Order</button>
+      <div class="text-center">
+        <button class="btn btn-success" onclick="submitOrder()">Submit Order</button>
+      </div>
     </div>
   </div>
+
+  <!-- Footer -->
+  <footer class="text-center mt-5 py-3 bg-dark text-white">
+    <p>&copy; 2025 Online Store. All rights reserved.</p>
+  </footer>
 
   <!-- Bootstrap JS Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
